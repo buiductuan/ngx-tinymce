@@ -1,6 +1,23 @@
 {
-  "name": "ngx-tinymce",
+  "name": "ngx-tinymces",
   "version": "0.0.1",
+  "keywords": [
+    "tinymce",
+    "angular",
+    "directive",
+    "component",
+    "ngx-tinymce",
+    "ng-tinymce",
+    "angular2-tinymce",
+    "angular 10"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/buiductuan/ngx-tinymce.git"
+  },
+  "bugs": {
+    "url": "https://github.com/buiductuan/ngx-tinymce/issues"
+  },
   "peerDependencies": {
     "@angular/common": "^9.1.12",
     "@angular/core": "^9.1.12"

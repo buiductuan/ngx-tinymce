@@ -1,4 +1,4 @@
-# ngx-tinymce
+# ngx-tinymces
 
 `Now compatible with Angular 10`
 
@@ -6,7 +6,7 @@
 
 First, install tinymce and this lib via npm:
 ```
-npm install --save tinymce ngx-tinymce
+npm install --save tinymce ngx-tinymces
 ```
 
 Then copy lightgray skin files from `node_modules/tinymce` to the `/assets` folder. So, i.e. there must be available `/assets/tinymce/skins/lightgray/skin.min.css` and `/assets/tinymce/skins/lightgray/content.min.css` file.
@@ -22,7 +22,7 @@ To support AOT mode in Angular 9 and higher you also need to include tinymce in 
 
 Import `TinymceModule` in you `app.module.ts` like this:
 ```typescript
-import { TinymceModule } from 'ngx-tinymce';
+import { TinymceModule } from 'ngx-tinymces';
 
 @NgModule({
   imports: [
@@ -58,7 +58,7 @@ ngAfterViewInit() {
 ## Configure
 You can configure TinyMCE globally:
 ```typescript
-import { TinymceModule } from 'ngx-tinymce';
+import { TinymceModule } from 'ngx-tinymces';
 
 @NgModule({
   imports: [
@@ -73,7 +73,7 @@ export class AppModule { }
 ```
 Please note that config is extended a bit.
 
-- Besides the original config ngx-tinymce supports `baseURL` for providing, i.e., custom plugins paths.
+- Besides the original config ngx-tinymces supports `baseURL` for providing, i.e., custom plugins paths.
 
 - `auto_focus` option is boolean instead of string.
 - You cannot specify `selector` option (and you don't need to, right?).
@@ -90,7 +90,7 @@ If you need other plugins than standart (`link paste table advlist autoresize li
 **Example:** 
 Place emoticons plugin to an `/assets/tinymce/plugins` folder, then:
 ```typescript
-import { TinymceModule } from 'ngx-tinymce';
+import { TinymceModule } from 'ngx-tinymces';
 
 @NgModule({
   imports: [
