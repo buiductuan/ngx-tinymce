@@ -5,7 +5,7 @@ import { TinymceOptions } from './tinymce-options.interface';
 
 import 'tinymce/tinymce.min';
 
-declare const tinymce: any;
+declare var tinymce: any;
 
 import 'tinymce/themes/modern/theme';
 import 'tinymce/plugins/link/plugin.js';
@@ -120,12 +120,6 @@ export class TinymceComponent implements ControlValueAccessor, AfterViewInit, On
     tinymce.init(this.options);
   }
 
-  ngOnDestroy() {
-    tinymce.remove(this.editor);
-    // remove DOM
-    document.getElementById(this.elementId).remove();
-  }
-
   // get accessor
   get value(): any {
     return this.innerValue;
@@ -138,7 +132,6 @@ export class TinymceComponent implements ControlValueAccessor, AfterViewInit, On
       this.zone.run(() => {
         this.onChangeCallback(v);
       });
-
     }
   }
 
@@ -261,6 +254,22 @@ export class TinymceComponent implements ControlValueAccessor, AfterViewInit, On
     editor.on('PastePostProcess', (e: any) => {
       this.pastePostProcess.emit(e);
     });
+  }
+
+  private onMemoryClean() {
+    if (this.elementId) {
+      delete this.elementId;
+    }
+    if (this.editor) {
+      delete this.editor;
+    }
+  }
+
+  ngOnDestroy() {
+    // remove DOM
+    document.getElementById(this.elementId).remove();
+    tinymce.remove(this.editor);
+    this.onMemoryClean();
   }
 
 }
